@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-import init_db as db
-import format_GUI as form
+import pages.init_db as db
+import pages.format_GUI as form
 
 
 class InitExp(tk.Frame):

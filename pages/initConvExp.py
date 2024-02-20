@@ -2,9 +2,11 @@ import csv
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
-import init_db as db
-import format_GUI as form
-import currConverter as currConv
+import pages.init_db as db
+import pages.format_GUI as form
+import currencyConverter.currConverter as currConv
+
+codes_csv = "./currencyConverter/FreeCurrencyAPI_codes.csv"
 
 class InitConExp(tk.Frame):
     def __init__(self, parent):
@@ -17,6 +19,7 @@ class InitConExp(tk.Frame):
         self.tree['columns'] = ('Trip', 'Date', 'Category', 'Expense', 'Cost',
                                 'Notes')
         form.format_col(self.tree)
+        db.create_table(self.table)
 
         # Frame for entering country code
         self.data_frame = ttk.LabelFrame(parent, text="Change Currency")
@@ -48,7 +51,7 @@ class InitConExp(tk.Frame):
         self.curr_list = tk.Listbox(self.data_frame, width=20, bg='#e6f1ff',
                                     fg='black')
         # Read in country codes
-        with open('FreeCurrencyAPI_codes.csv') as csvfile:
+        with open(codes_csv) as csvfile:
             code_list = csv.DictReader(csvfile)
             self.codes = {}
             for row in code_list:

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-import init_db as db
+import pages.init_db as db
 
 
 def add_tree(frame, table):
@@ -80,6 +80,7 @@ def add_buttons(parent, frame):
 
 def query_database(frame):
     """add content from database to tree"""
+    db.create_table(frame.table)
     conn = db.conn_to_db()
     cur = conn.cursor()
     cur.execute(f"SELECT rowid, * FROM {frame.table}")

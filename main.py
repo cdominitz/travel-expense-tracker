@@ -1,9 +1,10 @@
 from tkinter import *
 from tkinter import ttk
-from initTrips import InitTrips
-from initExpenses import InitExp
-from initConvExp import InitConExp
-from help import Help
+from pages.initTrips import InitTrips
+from pages.initExpenses import InitExp
+from pages.initConvExp import InitConExp
+from pages.help import Help
+from pages.init_db import create_table
 
 
 class Notebook(Tk):

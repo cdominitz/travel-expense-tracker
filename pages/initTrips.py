@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-import format_GUI as form
+import pages.format_GUI as form
 
 
 class InitTrips(tk.Frame):
