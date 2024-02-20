@@ -10,7 +10,7 @@ The Travel Expense Tracker is a Python application developed as part of the Soft
 
 ## Installation
 1. Clone the repository:
-git clone https://github.com/your_username/travel-expense-tracker.git
+git clone https://github.com/cdominitz/travel-expense-tracker.git
 2. Navigate to the project directory:
 cd travel-expense-tracker
 3. Install dependencies:
