@@ -10,11 +10,17 @@ The Travel Expense Tracker is a Python application developed as part of the Soft
 
 ## Installation
 1. Clone the repository:
-git clone https://github.com/cdominitz/travel-expense-tracker.git
+   \```bash
+   git clone https://github.com/your_username/travel-expense-tracker.git
+   \```
 2. Navigate to the project directory:
-cd travel-expense-tracker
+   \```bash
+   cd travel-expense-tracker
+   \```
 3. Install dependencies:
-pip install -r requirements.txt
+   \```bash
+   pip install -r requirements.txt
+   \```
 
 
 ## Usage
@@ -23,7 +29,7 @@ python main.py
 2. Use the provided GUI to:
 - Log trips by entering trip details.
 - Log expenses tied to each trip, specifying expense details.
-- ~~Convert logged expenses to a new user-designated currency.~~
+- Convert logged expenses to a new user-designated currency.
 
 Note: The currency conversion feature is temporarily disabled as the previous currency API used in the project is no longer available in the free version. 
 
