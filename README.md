@@ -1,7 +1,37 @@
-# Request Data:
-Right now the program utilizes the terminal, however this can be easily changed to reading it in from a text file or something else. The user will enter 3 or 4 items. The first one is a number representing the task that they want to complete (1 for retrieving a link, 2 for adding a new link, or 3 for editing a current link). This is currently broken up into two steps the task, and then the data criteria.
+# Travel Expense Tracker
 
-# Receive Data:
-Once the program receives the information, it completes the necessary steps that correspond to the selected task. It then returns a link if that is what the user requested, or the number 0 to indicate that the task was successfully completed. This can also be changed to fit the overall programs needs.
+## Description
+The Travel Expense Tracker is a Python application developed as part of the Software Engineering 1 class in the postbaccalaureate computer science program. It provides a convenient way to log and manage travel expenses, offering features such as trip logging, expense tracking, and currency conversion.
 
-<img width="641" alt="Screenshot 2023-05-08 at 11 53 32 PM" src="https://user-images.githubusercontent.com/107890151/236990004-2311aca9-099a-4f0b-a6e0-612471c3d3e5.png">
+## Features
+1. **Trip Logging**: Easily log details of your trips including trip name, dates, reason for travel, and location.
+2. **Expense Tracking**: Log expenses associated with each trip, including expense name, category, currency, amount, and additional notes.
+3. **Currency Conversion**: Convert logged expenses to a new user-designated currency using the FreeCurrencyAPI.
+
+## Installation
+1. Clone the repository:
+git clone https://github.com/your_username/travel-expense-tracker.git
+2. Navigate to the project directory:
+cd travel-expense-tracker
+3. Install dependencies:
+pip install -r requirements.txt
+
+
+## Usage
+1. Run the application:
+python main.py
+2. Use the provided GUI to:
+- Log trips by entering trip details.
+- Log expenses tied to each trip, specifying expense details.
+- ~~Convert logged expenses to a new user-designated currency.~~
+
+Note: The currency conversion feature is temporarily disabled as the previous currency API used in the project is no longer available in the free version. 
+
+## Contributing
+Thank you for considering contributing to the Travel Expense Tracker project! Contributions are welcome via pull requests. Before submitting a pull request, please ensure that your code adheres to the project's coding standards and conventions.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+For any inquiries or feedback, please contact [Calista Dominitz](mailto:cdominitz@gmail.com).

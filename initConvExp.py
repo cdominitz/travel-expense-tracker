@@ -2,14 +2,9 @@ import csv
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
-import zmq
 import init_db as db
 import format_GUI as form
-
-context = zmq.Context()
-socket = context.socket(zmq.REQ)
-socket.connect("tcp://localhost:5550")
-
+import currConverter as currConv
 
 class InitConExp(tk.Frame):
     def __init__(self, parent):
@@ -53,7 +48,7 @@ class InitConExp(tk.Frame):
         self.curr_list = tk.Listbox(self.data_frame, width=20, bg='#e6f1ff',
                                     fg='black')
         # Read in country codes
-        with open('codes-all_csv.csv') as csvfile:
+        with open('FreeCurrencyAPI_codes.csv') as csvfile:
             code_list = csv.DictReader(csvfile)
             self.codes = {}
             for row in code_list:
@@ -130,8 +125,8 @@ class InitConExp(tk.Frame):
                             'myDate': row[1],
                             'myCategory': row[2],
                             'myExpense': row[3],
-                            'myCost': self.edit_currency(row[4],
-                                                         self.e_code.get(),
+                            'myCost': self.edit_currency(row[4].upper(),
+                                                         self.e_code.get().upper(),
                                                          row[5]),
                             'myNotes': row[6]
                         })
@@ -148,9 +143,8 @@ class InitConExp(tk.Frame):
 
     def edit_currency(self, old_curr, new_curr, cost):
         """call on microservice to convert currency to selected code"""
-        user_input = str(old_curr) + ', ' + str(new_curr) + ', ' + str(cost)
-        socket.send_string(user_input)
-        conv_cost = float(socket.recv_string())
+        user_input = [old_curr, new_curr, cost]
+        conv_cost = currConv.convert(user_input)
         return round(conv_cost, 2)
 
     def clear_entries(self):
